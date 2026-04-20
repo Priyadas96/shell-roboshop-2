@@ -65,7 +65,7 @@ systemd_setup() {
 	systemctl daemon-reload &>>$LOG_FILE
 	systemctl enable $app_name &>>$LOG_FILE
 	systemctl start $app_name
-	VALIDATE $? "Starting app_name"
+	VALIDATE $? "Starting $app_name"
 }
 # validate functions takes input as exit status, what command they tried to install
 VALIDATE() {
