@@ -43,7 +43,7 @@ done
 
 # Reading a File Line by Line?
 echo "Reading a File Line by Line"
-filename= "./user.service"
+filename="./user.service"
 while IFS= read -r line; do
 	echo "processing : $line"
 done <"$filename"
