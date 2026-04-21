@@ -6,7 +6,7 @@ failure() {
 	echo "failure at Line: $1 $2"
 }
 
-trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERRS
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
 
 START_TIME=$(date +%s)
 USERID=$(id -u)
