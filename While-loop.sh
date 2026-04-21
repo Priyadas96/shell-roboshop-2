@@ -40,3 +40,10 @@ while [ $count -le 5 ]; do
 	echo "Iteration $count"
 	((count++))
 done
+
+# Reading a File Line by Line?
+echo "Reading a File Line by Line"
+filename="./user.service"
+while IFS= read -r line; do
+	echo "processing: $line"
+done <"$filename"
