@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "Hello, how are you"
 echooooo "Im good"
 echo "thanky"
