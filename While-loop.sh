@@ -29,3 +29,14 @@ done
 # Single-Line Syntax
 echo "Single-Line Syntax"
 for i in {1..10}; do echo "iteration $i"; done
+
+echo "--------------------------------"
+echo "--------------------------------"
+#While Loop
+# Counter-Based Loop :Increments a variable until it reaches a specific limit.
+echo "Counter-Based Loop"
+count=1
+while [ $count -le 5 ]; do
+	echo "Iteration $count"
+	((count++))
+done
