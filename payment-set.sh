@@ -23,14 +23,14 @@ mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 # check the user has root priveleges or not
-if [ $USERID -ne 1 ]; then
+if [ $USERID -ne 0 ]; then
 	echo -e "$R ERROR:: Please run this script with root access $N" | tee -a $LOG_FILE
 	exit 1 #give other than 0 upto 127
 else
 	echo "You are running with root access" | tee -a $LOG_FILE
 fi
 
-dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+dnf install python311111 g1cc python3-devel -y &>>$LOG_FILE
 
 id roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then
