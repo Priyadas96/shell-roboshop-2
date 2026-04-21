@@ -1,11 +1,13 @@
 #!/bin/bash
+
 set -e
 
 failure() {
-	echo "failure at line : $1 $2"
+	echo "failure at Line: $1 $2"
 }
 
-trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERRS
+
 START_TIME=$(date +%s)
 USERID=$(id -u)
 R="\e[31m"
@@ -21,7 +23,7 @@ mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 # check the user has root priveleges or not
-if [ $USERID -ne 0 ]; then
+if [ $USERID -ne 1 ]; then
 	echo -e "$R ERROR:: Please run this script with root access $N" | tee -a $LOG_FILE
 	exit 1 #give other than 0 upto 127
 else
